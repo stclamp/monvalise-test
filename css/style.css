@@ -325,6 +325,11 @@ img {
   padding: 24px 24px 24px 24px;
 }
 
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
 .noUi-handle {
   border: none;
   box-shadow: none;
@@ -391,6 +396,19 @@ img {
   font-size: 12px;
   line-height: 18px;
   color: #2d3132;
+}
+
+.price__from input::-webkit-outer-spin-button,
+.price__to input::-webkit-outer-spin-button,
+.price__from input::-webkit-inner-spin-button,
+.price__to input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price__from input:focus,
+.price__to input:focus {
+  outline: none;
 }
 
 .price__from label,
