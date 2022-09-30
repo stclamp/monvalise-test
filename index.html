@@ -1,533 +1,1047 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online clothing store</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/nouislider.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Online clothing store</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link href="css/nouislider.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <div class="banner">
-    <div class="container text-center">
-      <div class="row align-items-center d-flex justify-content-center">
-        <div class="col-4 d-flex align-items-center">
-          <span>👍</span>
-          <div class="banner__img">
-            <img src="img/banner-dress.png" alt="Banner Dress" />
+  <body>
+    <div class="banner">
+      <div class="container text-center">
+        <div class="row align-items-center d-flex justify-content-center">
+          <div class="col-4 d-flex align-items-center">
+            <span>👍</span>
+            <div class="banner__img">
+              <img src="img/banner-dress.png" alt="Banner Dress" />
+            </div>
+            <p class="banner__text d-flex align-self-center mb-0">
+              Брендовий верхній одяг від 899 грн
+            </p>
           </div>
-          <p class="banner__text d-flex align-self-center mb-0">
-            Брендовий верхній одяг від 899 грн
-          </p>
         </div>
       </div>
     </div>
-  </div>
-  <header class="header">
-    <div class="container">
-      <div class="row header__top d-flex align-items-center justify-content-between">
-        <div class="col-2 header__logo">
-          <a href="#">
-            <img src="img/logo.svg" alt="Logo" />
-          </a>
-        </div>
-        <div class="col-8 header__search d-flex">
-          <form class="header__form d-flex">
-            <label class="header__search-icon" for="search"><img src="img/search-icon.svg" alt="Search icon" /></label>
-            <input class="form-control" type="text" placeholder="Знайти речі або бренди" id="search" />
-            <button type="submit" class="btn btn-dark">Додати товар</button>
-          </form>
-          <div class="header__language">
-            <button class="header__dropdown btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
-              aria-expanded="false">
-              Укр
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Укр</a></li>
-              <li><a class="dropdown-item" href="#">Рус</a></li>
-              <li><a class="dropdown-item" href="#">Англ</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-2 header__icons d-flex">
-          <div class="header__indicators d-flex">
-            <div class="header__indicator header__heart">
-              <a href="#">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.2426 4.75736C14.5858 2.41421 18.3848 2.41421 20.7279 4.75736C23.0711 7.10051 23.0711 10.8995 20.7279 13.2426L12.2426 21.728L3.75736 13.2427C1.41421 10.8995 1.41421 7.10054 3.75736 4.75739C6.1005 2.41426 9.89947 2.41424 12.2426 4.75736ZM19.3137 6.17158C17.7516 4.60948 15.2189 4.60947 13.6568 6.17157L12.2426 7.58579L10.8284 6.17161C9.26633 4.60951 6.73367 4.60951 5.17157 6.17161C3.60948 7.7337 3.60948 10.2664 5.17157 11.8285L12.2426 18.8995L19.3137 11.8284C20.8758 10.2663 20.8758 7.73367 19.3137 6.17158Z"
-                    fill="#2D3132" />
-                </svg>
-              </a>
-            </div>
-            <div class="header__indicator header__message">
-              <a href="#">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M17 9C17 9.55228 16.5523 10 16 10H8C7.44772 10 7 9.55228 7 9C7 8.44772 7.44772 8 8 8H16C16.5523 8 17 8.44772 17 9Z"
-                    fill="#2D3132" />
-                  <path
-                    d="M7 13C7 13.5523 7.44772 14 8 14H16C16.5523 14 17 13.5523 17 13C17 12.4477 16.5523 12 16 12H8C7.44772 12 7 12.4477 7 13Z"
-                    fill="#2D3132" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M6 3C3.79086 3 2 4.79086 2 7V19C2 20.8811 3.93624 22.1395 5.65525 21.3754L10.2243 19.3448C10.7357 19.1174 11.2892 19 11.8489 19H18C20.2091 19 22 17.2091 22 15V7C22 4.79086 20.2091 3 18 3H6ZM18 5H6C4.89543 5 4 5.89543 4 7V19C4 19.4338 4.44653 19.724 4.84297 19.5478L9.41203 17.5171C10.1792 17.1762 11.0093 17 11.8489 17H18C19.1046 17 20 16.1046 20 15V7C20 5.89543 19.1046 5 18 5Z"
-                    fill="#2D3132" />
-                </svg>
-              </a>
-            </div>
-            <div class="header__indicator header__cart">
-              <a href="#">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M4.79797 4H2V2H6.44013L7.07398 5.19462C7.16705 5.6625 7.57777 6 8.05486 6H18.114C20.2086 6 21.6585 8.09212 20.923 10.0534L19.423 14.0534C18.9839 15.2243 17.8645 16 16.614 16H11.2843C8.89805 16 6.84434 14.3137 6.37993 11.9731L4.79797 4ZM7.62449 7.96918L8.34169 11.5839C8.62034 12.9882 9.85256 14 11.2843 14H16.614C17.0308 14 17.404 13.7414 17.5503 13.3511L19.0503 9.35112C19.2955 8.69737 18.8122 8 18.114 8H8.05486C7.90907 8 7.76535 7.98951 7.62449 7.96918Z"
-                    fill="#2D3132" />
-                  <path
-                    d="M10 19.5C10 20.3284 9.32843 21 8.5 21C7.67157 21 7 20.3284 7 19.5C7 18.6716 7.67157 18 8.5 18C9.32843 18 10 18.6716 10 19.5Z"
-                    fill="#2D3132" />
-                  <path
-                    d="M17.5 21C18.3284 21 19 20.3284 19 19.5C19 18.6716 18.3284 18 17.5 18C16.6716 18 16 18.6716 16 19.5C16 20.3284 16.6716 21 17.5 21Z"
-                    fill="#2D3132" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="header__profile">
-            <div class="header__avatar">
-              <img src="img/Avatar.jpg" alt="Avatar" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-9 header__nav">
-          <nav class="header__menu">
-            <ul class="header__menu-list d-flex justify-content-between align-items-center">
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Головна</a>
-              </li>
-              <li class="header__menu-item active">
-                <a href="#" class="header__menu-link">Каталог</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Жінкам</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Чоловікам</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">дИТЯЧі речі</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Аукціон</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Бренди</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Акції</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Аутентифікація</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Блог</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="catalog">
+    <header class="header">
       <div class="container">
-        <div class="row catalog__breadcrumbs">
-          <div class="col-2">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Головна</a></li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Каталог одягу
+        <div
+          class="row header__top d-flex align-items-center justify-content-between"
+        >
+          <div class="col-2 header__logo">
+            <a href="#">
+              <img src="img/logo.svg" alt="Logo" />
+            </a>
+          </div>
+          <div class="col-8 header__search d-flex">
+            <form class="header__form d-flex">
+              <label class="header__search-icon" for="search"
+                ><img src="img/search-icon.svg" alt="Search icon"
+              /></label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Знайти речі або бренди"
+                id="search"
+              />
+              <button type="submit" class="btn btn-dark">Додати товар</button>
+            </form>
+            <div class="header__language">
+              <button
+                class="header__dropdown btn"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="true"
+                aria-expanded="false"
+              >
+                Укр
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Укр</a></li>
+                <li><a class="dropdown-item" href="#">Рус</a></li>
+                <li><a class="dropdown-item" href="#">Англ</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2 header__icons d-flex">
+            <div class="header__indicators d-flex">
+              <div class="header__indicator header__heart">
+                <a href="#">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12.2426 4.75736C14.5858 2.41421 18.3848 2.41421 20.7279 4.75736C23.0711 7.10051 23.0711 10.8995 20.7279 13.2426L12.2426 21.728L3.75736 13.2427C1.41421 10.8995 1.41421 7.10054 3.75736 4.75739C6.1005 2.41426 9.89947 2.41424 12.2426 4.75736ZM19.3137 6.17158C17.7516 4.60948 15.2189 4.60947 13.6568 6.17157L12.2426 7.58579L10.8284 6.17161C9.26633 4.60951 6.73367 4.60951 5.17157 6.17161C3.60948 7.7337 3.60948 10.2664 5.17157 11.8285L12.2426 18.8995L19.3137 11.8284C20.8758 10.2663 20.8758 7.73367 19.3137 6.17158Z"
+                      fill="#2D3132"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div class="header__indicator header__message">
+                <a href="#">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 9C17 9.55228 16.5523 10 16 10H8C7.44772 10 7 9.55228 7 9C7 8.44772 7.44772 8 8 8H16C16.5523 8 17 8.44772 17 9Z"
+                      fill="#2D3132"
+                    />
+                    <path
+                      d="M7 13C7 13.5523 7.44772 14 8 14H16C16.5523 14 17 13.5523 17 13C17 12.4477 16.5523 12 16 12H8C7.44772 12 7 12.4477 7 13Z"
+                      fill="#2D3132"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M6 3C3.79086 3 2 4.79086 2 7V19C2 20.8811 3.93624 22.1395 5.65525 21.3754L10.2243 19.3448C10.7357 19.1174 11.2892 19 11.8489 19H18C20.2091 19 22 17.2091 22 15V7C22 4.79086 20.2091 3 18 3H6ZM18 5H6C4.89543 5 4 5.89543 4 7V19C4 19.4338 4.44653 19.724 4.84297 19.5478L9.41203 17.5171C10.1792 17.1762 11.0093 17 11.8489 17H18C19.1046 17 20 16.1046 20 15V7C20 5.89543 19.1046 5 18 5Z"
+                      fill="#2D3132"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div class="header__indicator header__cart">
+                <a href="#">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="red"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M4.79797 4H2V2H6.44013L7.07398 5.19462C7.16705 5.6625 7.57777 6 8.05486 6H18.114C20.2086 6 21.6585 8.09212 20.923 10.0534L19.423 14.0534C18.9839 15.2243 17.8645 16 16.614 16H11.2843C8.89805 16 6.84434 14.3137 6.37993 11.9731L4.79797 4ZM7.62449 7.96918L8.34169 11.5839C8.62034 12.9882 9.85256 14 11.2843 14H16.614C17.0308 14 17.404 13.7414 17.5503 13.3511L19.0503 9.35112C19.2955 8.69737 18.8122 8 18.114 8H8.05486C7.90907 8 7.76535 7.98951 7.62449 7.96918Z"
+                      fill="#2D3132"
+                    />
+                    <path
+                      d="M10 19.5C10 20.3284 9.32843 21 8.5 21C7.67157 21 7 20.3284 7 19.5C7 18.6716 7.67157 18 8.5 18C9.32843 18 10 18.6716 10 19.5Z"
+                      fill="#2D3132"
+                    />
+                    <path
+                      d="M17.5 21C18.3284 21 19 20.3284 19 19.5C19 18.6716 18.3284 18 17.5 18C16.6716 18 16 18.6716 16 19.5C16 20.3284 16.6716 21 17.5 21Z"
+                      fill="#2D3132"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="header__profile">
+              <div class="header__avatar">
+                <img src="img/Avatar.jpg" alt="Avatar" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-9 header__nav">
+            <nav class="header__menu">
+              <ul
+                class="header__menu-list d-flex justify-content-between align-items-center"
+              >
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Головна</a>
                 </li>
-              </ol>
+                <li class="header__menu-item active">
+                  <a href="#" class="header__menu-link">Каталог</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Жінкам</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Чоловікам</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">дИТЯЧі речі</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Аукціон</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Бренди</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Акції</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Аутентифікація</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">Блог</a>
+                </li>
+              </ul>
             </nav>
           </div>
         </div>
-        <div class="row">
-          <div class="col-3 catalog__title">
-            <h2>Каталог одягу</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 catalog__subtitle">
-            <h4>Фільтри</h4>
-            <div class="catalog__sortby">
-              <span>Сортувати за:</span>
-              <div class="dropdown">
-                <button class="btn btn-normal dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  За замовчуванням
-                </button>
-                <button class="btn btn-reverse dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <img src="img/arrow-down.svg" alt="">
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">За популярністю</a></li>
-                  <li><a class="dropdown-item" href="#">За ціною &#8595;</a></li>
-                  <li><a class="dropdown-item" href="#">За ціною &#8593;</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row catalog__content">
-          <div class="col-3 catalog__filters">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Категорії
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Maxime sit error, labore similique impedit ipsam
-                    asperiores quam architecto corporis facere culpa dolorem
-                    soluta quisquam! Provident necessitatibus sunt assumenda
-                    excepturi deserunt!
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    Ціна
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
-                  aria-labelledby="panelsStayOpen-headingTwo" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <div class="price__range">
-                      <div id="slider"></div>
-                    </div>
-                    <div class="price__amount">
-                      <div class="price__from">
-                        <label for="from">Від</label>
-                        <input type="number" value="980" id="from" />
-                      </div>
-                      <div class="price__to">
-                        <label for="to">До</label>
-                        <input type="number" value="20465" id="to" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Продавець
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Beatae eveniet facere dolorem at magnam? Optio sint
-                    recusandae eius! Officiis voluptate explicabo temporibus
-                    tempora nisi consequatur ullam saepe rem natus molestiae.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Бренд
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingFour" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Possimus quaerat unde molestias ad, laudantium eius
-                    blanditiis minus, modi eligendi perferendis vel amet cum
-                    maxime cumque soluta voluptas minima, eum aspernatur.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                    Стать
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show"
-                  aria-labelledby="panelsStayOpen-headingFive" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <div class="catalog__sex">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Жінкам
-                        </label>
-                      </div>
-                      <div class="catalog__sex-count">(64)</div>
-                    </div>
-                    <div class="catalog__sex">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Чоловікам
-                        </label>
-                      </div>
-                      <div class="catalog__sex-count">(16)</div>
-                    </div>
-                    <div class="catalog__sex">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Унісекс
-                        </label>
-                      </div>
-                      <div class="catalog__sex-count">(24)</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Розмір
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingSix" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Vero consequuntur nemo non. Vel reprehenderit, ratione,
-                    fugit est obcaecati expedita ex doloremque, at aut odio
-                    adipisci officiis corporis qui sit repudiandae.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                    Колір
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingSeven" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Saepe iure accusantium impedit, voluptatum velit eveniet
-                    nihil eaque culpa expedita delectus veniam exercitationem
-                    blanditiis magnam nesciunt pariatur provident illum quae
-                    dolores?
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingEight">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                    Матеріал
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingEight" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat odit laboriosam illum esse enim, quisquam
-                    assumenda ipsam earum culpa alias ratione quod molestias
-                    totam natus. Voluptate numquam molestias eaque cum?
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingNine">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                    Сезон
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingNine" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Suscipit est sapiente veritatis minus cum aut ducimus
-                    numquam eveniet, voluptates, optio soluta eum veniam
-                    recusandae perspiciatis ab doloremque explicabo quam
-                    ratione?
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTen">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                    Стиль
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingTen" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Quod harum consequatur debitis ipsum laudantium fugit
-                    doloremque perferendis sapiente ea dignissimos nulla velit
-                    nobis natus, deserunt voluptate, aspernatur exercitationem
-                    sit accusamus?
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-9 catalog__cards">
-            <div class="row">
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
-  </main>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/nouislider.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    </header>
+    <main>
+      <section class="catalog">
+        <div class="container">
+          <div class="row catalog__breadcrumbs">
+            <div class="col-2">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Головна</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Каталог одягу
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 catalog__title">
+              <h2>Каталог одягу</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 catalog__subtitle">
+              <h4>Фільтри</h4>
+              <div class="catalog__sortby">
+                <span>Сортувати за:</span>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-normal dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    За замовчуванням
+                  </button>
+                  <button
+                    class="btn btn-reverse dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="img/arrow-down.svg" alt="" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">За замовчуванням</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">За популярністю</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">За ціною &#8595;</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">За ціною &#8593;</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row catalog__content">
+            <div class="col-3 catalog__filters">
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="collapseOne"
+                    >
+                      Категорії
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Maxime sit error, labore similique impedit ipsam
+                      asperiores quam architecto corporis facere culpa dolorem
+                      soluta quisquam! Provident necessitatibus sunt assumenda
+                      excepturi deserunt!
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseTwo"
+                      aria-expanded="true"
+                      aria-controls="collapseTwo"
+                    >
+                      Ціна
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseTwo"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingTwo"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="price__range">
+                        <div id="slider"></div>
+                      </div>
+                      <div class="price__amount">
+                        <div class="price__from">
+                          <label for="from">Від</label>
+                          <input type="number" value="980" id="from" />
+                        </div>
+                        <div class="price__to">
+                          <label for="to">До</label>
+                          <input type="number" value="20465" id="to" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Продавець
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Beatae eveniet facere dolorem at magnam? Optio sint
+                      recusandae eius! Officiis voluptate explicabo temporibus
+                      tempora nisi consequatur ullam saepe rem natus molestiae.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Бренд
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingFour"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Possimus quaerat unde molestias ad, laudantium eius
+                      blanditiis minus, modi eligendi perferendis vel amet cum
+                      maxime cumque soluta voluptas minima, eum aspernatur.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseFive"
+                      aria-expanded="true"
+                      aria-controls="collapseFive"
+                    >
+                      Стать
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseFive"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingFive"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="catalog__sex">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Жінкам
+                          </label>
+                        </div>
+                        <div class="catalog__sex-count">(64)</div>
+                      </div>
+                      <div class="catalog__sex">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Чоловікам
+                          </label>
+                        </div>
+                        <div class="catalog__sex-count">(16)</div>
+                      </div>
+                      <div class="catalog__sex">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Унісекс
+                          </label>
+                        </div>
+                        <div class="catalog__sex-count">(24)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseSix"
+                      aria-expanded="false"
+                      aria-controls="collapseSix"
+                    >
+                      Розмір
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseSix"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingSix"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Vero consequuntur nemo non. Vel reprehenderit, ratione,
+                      fugit est obcaecati expedita ex doloremque, at aut odio
+                      adipisci officiis corporis qui sit repudiandae.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseSeven"
+                      aria-expanded="false"
+                      aria-controls="collapseSeven"
+                    >
+                      Колір
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseSeven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingSeven"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Saepe iure accusantium impedit, voluptatum velit eveniet
+                      nihil eaque culpa expedita delectus veniam exercitationem
+                      blanditiis magnam nesciunt pariatur provident illum quae
+                      dolores?
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseEight"
+                      aria-expanded="false"
+                      aria-controls="collapseEight"
+                    >
+                      Матеріал
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseEight"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingEight"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quaerat odit laboriosam illum esse enim, quisquam
+                      assumenda ipsam earum culpa alias ratione quod molestias
+                      totam natus. Voluptate numquam molestias eaque cum?
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingNine">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseNine"
+                      aria-expanded="false"
+                      aria-controls="collapseNine"
+                    >
+                      Сезон
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseNine"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingNine"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Suscipit est sapiente veritatis minus cum aut ducimus
+                      numquam eveniet, voluptates, optio soluta eum veniam
+                      recusandae perspiciatis ab doloremque explicabo quam
+                      ratione?
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseTen"
+                      aria-expanded="false"
+                      aria-controls="collapseTen"
+                    >
+                      Стиль
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseTen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTen"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quod harum consequatur debitis ipsum laudantium fugit
+                      doloremque perferendis sapiente ea dignissimos nulla velit
+                      nobis natus, deserunt voluptate, aspernatur exercitationem
+                      sit accusamus?
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-9 catalog__cards">
+              <div class="row d-flex">
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-1.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                      <span class="card-top">ТОП</span>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">LOUIS VUITTON</span>
+                        <h5 class="card-name">
+                          Темно-сині джинси Louis Vuitton
+                        </h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">5 499 ₴</span>
+                          <span class="card-new-price">3 799 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Херсон</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-love.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>LoveBrand</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-2.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                      <span class="card-top">ТОП</span>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">THOM BROWNE</span>
+                        <h5 class="card-name">Чорний піджак Thom Browne</h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">11 999 ₴</span>
+                          <span class="card-new-price">8 599 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Хмельницький</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-sell.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>Sell_For_Men</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-3.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">CANALI</span>
+                        <h5 class="card-name">Вовняний піджак Canali</h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">4 999 ₴</span>
+                          <span class="card-new-price">2 599 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Хмельницький</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-sell.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>Sell_For_Men</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-4.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">LOUIS VUITTON</span>
+                        <h5 class="card-name">Клатч Louis Vuitton Limelight</h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">4 999 ₴</span>
+                          <span class="card-new-price">3 499 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Дніпро</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-brand.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>Brandear</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-5.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                      <span class="card-organic">organic</span>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">ELENA GHISELINI</span>
+                        <h5 class="card-name">
+                          Сумка з декором Elena Ghisellini
+                        </h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">1 999 ₴</span>
+                          <span class="card-new-price">1 599 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Дніпро</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-brand.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>Brandear</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-6.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">ACNE</span>
+                        <h5 class="card-name">Бомбер Acne на блискавці</h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">5 999 ₴</span>
+                          <span class="card-new-price">4 199 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Київ</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-alex.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>Alexalex</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-7.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">GUCCI</span>
+                        <h5 class="card-name">Довга сукня Gucci</h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">11 999 ₴</span>
+                          <span class="card-new-price">8 599 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Рівне</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-cell-buy.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>SellBuy</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-8.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">CHANEL</span>
+                        <h5 class="card-name">Помаранчевий бомбер Woolrich</h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">1 999 ₴</span>
+                          <span class="card-new-price">1 599 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Кропивницький</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-deeva.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>Deeva_Sofia</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a href="#" class="card">
+                    <img
+                      src="img/catalog-9.jpg"
+                      class="card-img-top"
+                      alt="Catalog Image"
+                    />
+                    <div class="card-icons">
+                      <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                    </div>
+                    <div class="card-body">
+                      <div class="card-title">
+                        <span class="card-brand">HACHE</span>
+                        <h5 class="card-name">Салатове пальто Hache</h5>
+                      </div>
+                      <div class="card-info">
+                        <div class="card-price">
+                          <span class="card-old-price">5 999 ₴</span>
+                          <span class="card-new-price">4 199 ₴ </span>
+                        </div>
+                        <div class="card-seller">
+                          <div class="card-place">
+                            <div>
+                              <img
+                                src="img/catalog-geo.svg"
+                                alt="Geo Position"
+                              />
+                            </div>
+                            <span class="card-city">Київ</span>
+                          </div>
+                          <div class="card-seller-name">
+                            <div>
+                              <img
+                                src="img/catalog-avatar-love.jpg"
+                                alt="Catalog Avatar"
+                              />
+                            </div>
+                            <span>LoveBrand</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="row catalog__pagination d-flex justify-content-center"
+              >
+                <div class="col-7">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link catalog-prev" href="#">Попередня</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">5</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">6</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">7</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">8</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link catalog-next" href="#">Наступна</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

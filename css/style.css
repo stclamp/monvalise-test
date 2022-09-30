@@ -300,18 +300,18 @@ img {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #5C5F60;
+  color: #5c5f60;
   margin-right: 12px;
 }
 
 .catalog__sortby .btn {
-  background-color: #EFF1F1;
+  background-color: #eff1f1;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #2D3132;
+  color: #2d3132;
   padding: 8px 8px 8px 12px;
   transition: 0.2s ease;
 }
@@ -323,7 +323,6 @@ img {
 .catalog__sortby .btn:hover ~ .btn-reverse {
   background-color: #c9c9c9;
 }
-
 
 .catalog__sortby .btn-reverse {
   border-top-left-radius: 0;
@@ -376,7 +375,7 @@ img {
 
 .accordion-item:first-of-type {
   border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .accordion-body {
@@ -498,10 +497,10 @@ img {
   color: #747778;
 }
 
-/* .form-check-input:focus {
+.form-check-input:focus {
   box-shadow: none;
   border-color: #2d3132;
-} */
+}
 
 .form-check-label {
   font-weight: 400;
@@ -514,12 +513,200 @@ img {
 .catalog__cards {
   margin-top: 24px;
   padding-left: 24px;
-  
+}
+
+.catalog__cards .col-3 {
+  min-width: 312px;
+  max-width: 312px;
+  margin-right: 24px;
+}
+
+.catalog__cards .col-3:nth-child(3n + 3) {
+  margin-right: 0;
 }
 
 .card {
+  min-width: 312px;
   max-width: 312px;
   margin-bottom: 24px;
-  padding: 24px;
+  padding: 45px 24px 24px 24px;
+  position: relative;
+  text-decoration: none;
 }
 
+.card-img-top {
+  width: 207px;
+  height: 263px;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-icons img {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 20px;
+  height: 20px;
+}
+
+.card-top {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #00382f;
+  background: #b4fff0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: absolute;
+  left: 24px;
+  top: 306px;
+}
+
+.card-organic {
+  background: #e0e3e3;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #2d3132;
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-title {
+  margin-top: 37px;
+}
+
+.card-brand {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: #5c5f60;
+}
+
+.card-name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2d3132;
+  margin-top: 4px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-old-price {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration-line: line-through;
+  color: #747778;
+}
+
+.card-new-price {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2d3132;
+}
+
+.card-place {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #2d3132;
+  align-items: center;
+}
+
+.card-place img {
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+  margin-top: -3px;
+}
+
+.card-seller-name img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.card-seller-name {
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2d3132;
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+}
+
+.page-item {
+  margin-right: 8px;
+}
+
+.page-item:last-child {
+  margin-right: 0;
+}
+
+.page-link:not(:last-child) {
+  border-radius: 50%;
+}
+
+.page-link {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #5c5f60;
+  border: 1.6px solid #c4c7c7;
+  border-radius: 100px;
+  height: 34px;
+  width: 34px;
+}
+
+.page-item.active a {
+  background: transparent;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: #2d3132;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.6px solid #2d3132;
+}
+
+.page-item:first-child .page-link {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  width: auto;
+  height: auto;
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  width: auto;
+  height: auto;
+}
