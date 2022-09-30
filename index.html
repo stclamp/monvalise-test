@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online clothing store</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/nouislider.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -186,7 +187,375 @@
         </div>
       </div>
     </header>
+    <main>
+      <section class="catalog">
+        <div class="container">
+          <div class="row catalog__breadcrumbs">
+            <div class="col-2">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Головна</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Каталог одягу
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 catalog__title">
+              <h2>Каталог одягу</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2 catalog__subtitle">
+              <h4>Фільтри</h4>
+            </div>
+          </div>
+          <div class="row catalog__content">
+            <div class="col-3 catalog__filters">
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="collapseOne"
+                    >
+                      Категорії
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Maxime sit error, labore similique impedit ipsam
+                      asperiores quam architecto corporis facere culpa dolorem
+                      soluta quisquam! Provident necessitatibus sunt assumenda
+                      excepturi deserunt!
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseTwo"
+                      aria-expanded="true"
+                      aria-controls="collapseTwo"
+                    >
+                      Ціна
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseTwo"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingTwo"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="price__range">
+                        <div id="slider"></div>
+                      </div>
+                      <div class="price__amount">
+                        <div class="price__from">
+                          <label for="from">Від</label>
+                          <input type="number" value="980" id="from" />
+                        </div>
+                        <div class="price__to">
+                          <label for="to">До</label>
+                          <input type="number" value="20465" id="to" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Продавець
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Beatae eveniet facere dolorem at magnam? Optio sint
+                      recusandae eius! Officiis voluptate explicabo temporibus
+                      tempora nisi consequatur ullam saepe rem natus molestiae.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Бренд
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingFour"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Possimus quaerat unde molestias ad, laudantium eius
+                      blanditiis minus, modi eligendi perferendis vel amet cum
+                      maxime cumque soluta voluptas minima, eum aspernatur.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseFive"
+                      aria-expanded="true"
+                      aria-controls="collapseFive"
+                    >
+                      Стать
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseFive"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingFive"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="catalog__sex">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Жінкам
+                          </label>
+                        </div>
+                        <div class="catalog__sex-count">(64)</div>
+                      </div>
+                      <div class="catalog__sex">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Чоловікам
+                          </label>
+                        </div>
+                        <div class="catalog__sex-count">(16)</div>
+                      </div>
+                      <div class="catalog__sex">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Унісекс
+                          </label>
+                        </div>
+                        <div class="catalog__sex-count">(24)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseSix"
+                      aria-expanded="false"
+                      aria-controls="collapseSix"
+                    >
+                      Розмір
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseSix"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingSix"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Vero consequuntur nemo non. Vel reprehenderit, ratione,
+                      fugit est obcaecati expedita ex doloremque, at aut odio
+                      adipisci officiis corporis qui sit repudiandae.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseSeven"
+                      aria-expanded="false"
+                      aria-controls="collapseSeven"
+                    >
+                      Колір
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseSeven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingSeven"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Saepe iure accusantium impedit, voluptatum velit eveniet
+                      nihil eaque culpa expedita delectus veniam exercitationem
+                      blanditiis magnam nesciunt pariatur provident illum quae
+                      dolores?
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseEight"
+                      aria-expanded="false"
+                      aria-controls="collapseEight"
+                    >
+                      Матеріал
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseEight"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingEight"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quaerat odit laboriosam illum esse enim, quisquam
+                      assumenda ipsam earum culpa alias ratione quod molestias
+                      totam natus. Voluptate numquam molestias eaque cum?
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingNine">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseNine"
+                      aria-expanded="false"
+                      aria-controls="collapseNine"
+                    >
+                      Сезон
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseNine"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingNine"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Suscipit est sapiente veritatis minus cum aut ducimus
+                      numquam eveniet, voluptates, optio soluta eum veniam
+                      recusandae perspiciatis ab doloremque explicabo quam
+                      ratione?
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseTen"
+                      aria-expanded="false"
+                      aria-controls="collapseTen"
+                    >
+                      Стиль
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseTen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTen"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quod harum consequatur debitis ipsum laudantium fugit
+                      doloremque perferendis sapiente ea dignissimos nulla velit
+                      nobis natus, deserunt voluptate, aspernatur exercitationem
+                      sit accusamus?
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-9 catalog__cards"></div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

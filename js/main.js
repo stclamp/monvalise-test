@@ -6,3 +6,14 @@ languageList.forEach((item) => {
     languageBtn.textContent = e.target.textContent;
   });
 });
+
+let slider = document.getElementById("slider");
+
+noUiSlider.create(slider, {
+  start: [0, 50],
+  connect: true,
+  range: {
+    min: 0,
+    max: 100,
+  },
+});
