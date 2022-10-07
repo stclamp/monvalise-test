@@ -39,9 +39,26 @@ img {
   color: #0f1a34;
 }
 
+.offcanvas.offcanvas-start {
+  right: 0;
+  left: auto;
+  transform: translateX(100%);
+  border-right: 0;
+}
+
+
 .header {
   position: relative;
-  /* padding-bottom: 16px; */
+}
+
+.header__burger-btn {
+  position: absolute;
+  top: 17px;
+  right: -26px;
+}
+
+.header__burger-btn img {
+  width: auto;
 }
 
 .header::after {
@@ -453,6 +470,7 @@ img {
   font-size: 12px;
   line-height: 18px;
   color: #2d3132;
+  border-radius: 0;
 }
 
 .price__from input::-webkit-outer-spin-button,
@@ -466,6 +484,13 @@ img {
 .price__from input:focus,
 .price__to input:focus {
   outline: none;
+}
+
+
+.form-control:focus {
+  outline: none;
+  border-color: #c4c7c7;
+  box-shadow: none;
 }
 
 .price__from label,
@@ -681,6 +706,11 @@ img {
   border-radius: 100px;
   height: 34px;
   width: 34px;
+  transition: 0.3s ease;
+}
+
+.page-link:hover {
+  color: #5c5f60;
 }
 
 .page-item.active a {
@@ -756,6 +786,7 @@ img {
   font-size: 14px;
   line-height: 21px;
   color: #2d3132;
+  transition: 0.3s ease;
 }
 
 .footer-link img {
