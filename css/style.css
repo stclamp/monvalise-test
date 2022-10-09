@@ -4,10 +4,17 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  /* border: 1px solid red
+  overflow-x: hidden; */
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Stolzl";
+  overflow-x: hidden;
 }
 
 .container {
@@ -44,7 +51,16 @@ img {
   left: auto;
   transform: translateX(100%);
   border-right: 0;
+  padding: 20px;
+  overflow: auto;
 }
+
+.btn-close {
+  right: 10px;
+    top: 5px;
+    position: absolute;
+}
+
 
 
 .header {
@@ -278,6 +294,66 @@ img {
 .catalog__filters {
   padding: 0;
   margin-top: 24px;
+  z-index: 10;
+}
+
+.catalog__filter-close {
+  position: absolute;
+  left: 330px;
+  z-index: 10;
+  background-color: #fff;
+  width: 70px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.catalog__filter-close.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.catalog__filter-btn {
+ 
+  opacity: 0;
+  visibility: hidden;
+}
+
+.catalog__filters.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.btn.active {
+  border-color: transparent;
+}
+
+
+
+.catalog__overflow {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #0000005b;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.catalog__overflow.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.catalog__filter-btn img {
+  width: 30px;
+}
+
+.catalog__content {
+  position: relative;
 }
 
 .breadcrumb {
@@ -306,6 +382,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 32px;
 }
 
 .catalog__sortby {
@@ -354,7 +431,7 @@ img {
 }
 
 .catalog__subtitle h4 {
-  margin-top: 32px;
+  
   margin-bottom: 0;
   font-weight: 400;
   font-size: 22px;
@@ -535,9 +612,14 @@ img {
   padding-left: 8px;
 }
 
+
+
 .catalog__cards {
   margin-top: 24px;
   padding-left: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 312px);
+  gap: 24px;
 }
 
 .catalog__cards .col-3 {
@@ -553,10 +635,10 @@ img {
 .card {
   min-width: 312px;
   max-width: 312px;
-  margin-bottom: 24px;
   padding: 45px 24px 24px 24px;
   position: relative;
   text-decoration: none;
+  margin: 0;
 }
 
 .card-img-top {
@@ -678,6 +760,10 @@ img {
   font-size: 14px;
   line-height: 21px;
   color: #2d3132;
+}
+
+.catalog__pagination {
+  margin-top: 56px;
 }
 
 .pagination {

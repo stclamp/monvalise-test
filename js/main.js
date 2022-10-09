@@ -27,3 +27,28 @@ noUiSlider.create(slider, {
     max: 100,
   },
 });
+
+const filterOpen = document.querySelector('.catalog__filter-btn');
+const filterClose = document.querySelector('.catalog__filter-close');
+const filterContent = document.querySelector('.catalog__filters');
+const filterOverflow = document.querySelector('.catalog__overflow');
+
+filterOpen.addEventListener('click', () => {
+  filterContent.classList.add('active');
+  filterOverflow.classList.add('active');
+  filterClose.classList.add('active');
+})
+
+filterClose.addEventListener('click', () => {
+  filterContent.classList.remove('active');
+  filterOverflow.classList.remove('active');
+  filterClose.classList.remove('active');
+})
+
+filterOverflow.addEventListener('click', () => {
+  filterContent.classList.remove('active');
+  filterOverflow.classList.remove('active');
+  filterClose.classList.remove('active');
+})
+
+

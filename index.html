@@ -16,7 +16,7 @@
   <div class="banner">
     <div class="container text-center">
       <div class="row align-items-center d-flex justify-content-center">
-        <div class="col-xxl-4 col-xl-6 d-flex align-items-center justify-content-center">
+        <div class="col-xxl-4 col-xl-6 col-12 d-flex align-items-center justify-content-center">
           <span>👍</span>
           <div class="banner__img">
             <img src="img/banner-dress.png" alt="Banner Dress" />
@@ -31,12 +31,12 @@
   <header class="header">
     <div class="container">
       <div class="row header__top d-flex align-items-center justify-content-between justify-content-sm-start">
-        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 me-sm-3 me-md-4 me-lg-0  header__logo">
+        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-4 me-sm-3 me-md-4 me-lg-0  header__logo">
           <a href="#">
             <img src="img/logo.svg" alt="Logo" />
           </a>
         </div>
-        <div class="col-xxl-8 col-xl-7 col-lg-6 col-md-9 col-sm-9  header__search d-flex">
+        <div class="col-xxl-8 col-xl-7 col-lg-6 col-md-9 col-sm-9 d-none d-sm-flex  header__search d-flex">
           <form class="header__form d-flex">
             <label class="header__search-icon" for="search"><img src="img/search-icon.svg" alt="Search icon" /></label>
             <input class="form-control" type="text" placeholder="Знайти речі або бренди" id="search" />
@@ -54,7 +54,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-xxl-2 col-xl-3 col-lg-3 d-sm-none d-lg-flex header__icons d-flex justify-content-center">
+        <div class="col-xxl-2 col-xl-3 col-lg-3 d-none d-lg-flex header__icons d-flex justify-content-center">
           <div class="header__indicators d-flex">
             <div class="header__indicator header__heart">
               <a href="#">
@@ -102,16 +102,16 @@
             </div>
           </div>
         </div>
-        <button class="btn header__burger-btn col-md-1 col-sm-1 d-lg-none" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img src="img/burger.svg"
-            alt="Burger Icon"></button>
+        <button class="btn header__burger-btn col-md-1 col-sm-1 col-2 d-lg-none" type="button"
+          data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"><img src="img/burger.svg" alt="Burger Icon"></button>
       </div>
 
 
       <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
         aria-labelledby="offcanvasWithBothOptionsLabel">
-
-        <div class="header__icons d-flex justify-content-center">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="header__icons col-12 d-flex justify-content-start">
           <div class="header__indicators d-flex">
             <div class="header__indicator header__heart">
               <a href="#">
@@ -159,8 +159,26 @@
             </div>
           </div>
         </div>
-        <nav class="header__menu">
-          <ul class="header__menu-list d-flex justify-content-between align-items-center">
+        <div class="col-12 d-md-none  header__search d-flex flex-column">
+          <form class="header__form d-flex flex-column">
+            <label class="header__search-icon" for="search"><img src="img/search-icon.svg" alt="Search icon" /></label>
+            <input class="form-control" type="text" placeholder="Знайти речі або бренди" id="search" />
+            <button type="submit" class="btn btn-dark">Додати товар</button>
+          </form>
+          <div class="header__language">
+            <button class="header__dropdown btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
+              aria-expanded="false">
+              Укр
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Укр</a></li>
+              <li><a class="dropdown-item" href="#">Рус</a></li>
+              <li><a class="dropdown-item" href="#">Англ</a></li>
+            </ul>
+          </div>
+        </div>
+        <nav class="header__menu col-12">
+          <ul class="header__menu-list mt-md-3 flex-column d-flex justify-content-between align-items-center">
             <li class="header__menu-item">
               <a href="#" class="header__menu-link">Головна</a>
             </li>
@@ -195,7 +213,7 @@
         </nav>
       </div>
 
-      <div class="row">
+      <div class="row d-none d-lg-flex">
         <div class="col-xl-9 col-lg-11 header__nav">
           <nav class="header__menu">
             <ul class="header__menu-list d-flex justify-content-between align-items-center">
@@ -239,7 +257,7 @@
     <section class="catalog">
       <div class="container">
         <div class="row catalog__breadcrumbs">
-          <div class="col-xl-2 col-lg-4">
+          <div class="col-xl-2 col-lg-4 col-11">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Головна</a></li>
@@ -251,15 +269,17 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-3 catalog__title">
+          <div class="col-12 catalog__title">
             <h2>Каталог одягу</h2>
           </div>
         </div>
         <div class="row">
-          <div class="col-12 catalog__subtitle">
-            <h4>Фільтри</h4>
+          <div class="col-12 catalog__subtitle d-flex align-items-start align-items-sm-center flex-sm-row flex-column">
+            <h4 class="d-flex align-items-center">Фільтри <button class="d-md-block d-lg-none catalog__filter-btn btn">
+                <img src="img/filter.svg" alt="Filter Btn">
+              </button></h4>
             <div class="catalog__sortby">
-              <span>Сортувати за:</span>
+              <span class="d-sm-inline d-none">Сортувати за:</span>
               <div class="dropdown">
                 <button class="btn btn-normal dropdown-toggle" type="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -287,8 +307,13 @@
             </div>
           </div>
         </div>
-        <div class="row catalog__content">
-          <div class="col-3 catalog__filters">
+        <div class="row catalog__content d-flex">
+
+          <button class="btn catalog__filter-close">
+            <img src="img/close.svg" alt="Close">
+          </button>
+          <div class="catalog__overflow d-md-block d-lg-none"></div>
+          <div class="col-lg-3 col-5 catalog__filters">
             <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -498,373 +523,368 @@
               </div>
             </div>
           </div>
-          <div class="col-9 catalog__cards">
-            <div class="row d-flex">
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-1.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
-                    <span class="card-top">ТОП</span>
+          <div class="col-9 col-lg-9 col-12 catalog__cards">
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-1.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                  <span class="card-top">ТОП</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">LOUIS VUITTON</span>
+                    <h5 class="card-name">
+                      Темно-сині джинси Louis Vuitton
+                    </h5>
                   </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">LOUIS VUITTON</span>
-                      <h5 class="card-name">
-                        Темно-сині джинси Louis Vuitton
-                      </h5>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">5 499 ₴</span>
+                      <span class="card-new-price">3 799 ₴ </span>
                     </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">5 499 ₴</span>
-                        <span class="card-new-price">3 799 ₴ </span>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Херсон</span>
                       </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Херсон</span>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-love.jpg" alt="Catalog Avatar" />
                         </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-love.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>LoveBrand</span>
-                        </div>
+                        <span>LoveBrand</span>
                       </div>
                     </div>
                   </div>
-                </a>
-              </div>
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-2.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
-                    <span class="card-top">ТОП</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">THOM BROWNE</span>
-                      <h5 class="card-name">Чорний піджак Thom Browne</h5>
-                    </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">11 999 ₴</span>
-                        <span class="card-new-price">8 599 ₴ </span>
-                      </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Хмельницький</span>
-                        </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-sell.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>Sell_For_Men</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-3.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
-                  </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">CANALI</span>
-                      <h5 class="card-name">Вовняний піджак Canali &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
-                    </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">4 999 ₴</span>
-                        <span class="card-new-price">2 599 ₴ </span>
-                      </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Хмельницький</span>
-                        </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-sell.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>Sell_For_Men</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
-            <div class="row">
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-4.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-2.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                  <span class="card-top">ТОП</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">THOM BROWNE</span>
+                    <h5 class="card-name">Чорний піджак Thom Browne</h5>
                   </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">LOUIS VUITTON</span>
-                      <h5 class="card-name">Клатч Louis Vuitton Limelight &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">11 999 ₴</span>
+                      <span class="card-new-price">8 599 ₴ </span>
                     </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">4 999 ₴</span>
-                        <span class="card-new-price">3 499 ₴ </span>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Хмельницький</span>
                       </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Дніпро</span>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-sell.jpg" alt="Catalog Avatar" />
                         </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-brand.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>Brandear</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-5.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
-                    <span class="card-organic">organic</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">ELENA GHISELINI</span>
-                      <h5 class="card-name">
-                        Сумка з декором Elena Ghisellini
-                      </h5>
-                    </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">1 999 ₴</span>
-                        <span class="card-new-price">1 599 ₴ </span>
-                      </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Дніпро</span>
-                        </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-brand.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>Brandear</span>
-                        </div>
+                        <span>Sell_For_Men</span>
                       </div>
                     </div>
                   </div>
-                </a>
-              </div>
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-6.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
-                  </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">ACNE</span>
-                      <h5 class="card-name">Бомбер Acne на блискавці &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
-                    </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">5 999 ₴</span>
-                        <span class="card-new-price">4 199 ₴ </span>
-                      </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Київ</span>
-                        </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-alex.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>Alexalex</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
-            <div class="row">
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-7.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-3.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">CANALI</span>
+                    <h5 class="card-name">Вовняний піджак Canali &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
                   </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">GUCCI</span>
-                      <h5 class="card-name">Довга сукня Gucci &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">4 999 ₴</span>
+                      <span class="card-new-price">2 599 ₴ </span>
                     </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">11 999 ₴</span>
-                        <span class="card-new-price">8 599 ₴ </span>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Хмельницький</span>
                       </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Рівне</span>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-sell.jpg" alt="Catalog Avatar" />
                         </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-cell-buy.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>SellBuy</span>
-                        </div>
+                        <span>Sell_For_Men</span>
                       </div>
                     </div>
                   </div>
-                </a>
-              </div>
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-8.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
-                  </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">CHANEL</span>
-                      <h5 class="card-name">Помаранчевий бомбер Woolrich</h5>
-                    </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">1 999 ₴</span>
-                        <span class="card-new-price">1 599 ₴ </span>
-                      </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Кропивницький</span>
-                        </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-deeva.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>Deeva_Sofia</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-xxl-4 col-xl-4">
-                <a href="#" class="card">
-                  <img src="img/catalog-9.jpg" class="card-img-top" alt="Catalog Image" />
-                  <div class="card-icons">
-                    <img src="img/catalog-heart.svg" alt="Catalog Heart" />
-                  </div>
-                  <div class="card-body">
-                    <div class="card-title">
-                      <span class="card-brand">HACHE</span>
-                      <h5 class="card-name">Салатове пальто Hache &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
-                    </div>
-                    <div class="card-info">
-                      <div class="card-price">
-                        <span class="card-old-price">5 999 ₴</span>
-                        <span class="card-new-price">4 199 ₴ </span>
-                      </div>
-                      <div class="card-seller">
-                        <div class="card-place">
-                          <div>
-                            <img src="img/catalog-geo.svg" alt="Geo Position" />
-                          </div>
-                          <span class="card-city">Київ</span>
-                        </div>
-                        <div class="card-seller-name">
-                          <div>
-                            <img src="img/catalog-avatar-love.jpg" alt="Catalog Avatar" />
-                          </div>
-                          <span>LoveBrand</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
-            <div class="row catalog__pagination d-flex justify-content-center">
-              <div class="col-xxl-7 col-xl-8">
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination">
-                    <li class="page-item">
-                      <a class="page-link catalog-prev" href="#">Попередня</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">4</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">5</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">6</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">7</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">8</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link catalog-next" href="#">Наступна</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-4.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">LOUIS VUITTON</span>
+                    <h5 class="card-name">Клатч Louis Vuitton Limelight &ensp; &ensp; &ensp; &ensp;</h5>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">4 999 ₴</span>
+                      <span class="card-new-price">3 499 ₴ </span>
+                    </div>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Дніпро</span>
+                      </div>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-brand.jpg" alt="Catalog Avatar" />
+                        </div>
+                        <span>Brandear</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-5.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                  <span class="card-organic">organic</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">ELENA GHISELINI</span>
+                    <h5 class="card-name">
+                      Сумка з декором Elena Ghisellini
+                    </h5>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">1 999 ₴</span>
+                      <span class="card-new-price">1 599 ₴ </span>
+                    </div>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Дніпро</span>
+                      </div>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-brand.jpg" alt="Catalog Avatar" />
+                        </div>
+                        <span>Brandear</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-6.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">ACNE</span>
+                    <h5 class="card-name">Бомбер Acne на блискавці &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">5 999 ₴</span>
+                      <span class="card-new-price">4 199 ₴ </span>
+                    </div>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Київ</span>
+                      </div>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-alex.jpg" alt="Catalog Avatar" />
+                        </div>
+                        <span>Alexalex</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-7.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">GUCCI</span>
+                    <h5 class="card-name">Довга сукня Gucci &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">11 999 ₴</span>
+                      <span class="card-new-price">8 599 ₴ </span>
+                    </div>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Рівне</span>
+                      </div>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-cell-buy.jpg" alt="Catalog Avatar" />
+                        </div>
+                        <span>SellBuy</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-8.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">CHANEL</span>
+                    <h5 class="card-name">Помаранчевий бомбер Woolrich</h5>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">1 999 ₴</span>
+                      <span class="card-new-price">1 599 ₴ </span>
+                    </div>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Кропивницький</span>
+                      </div>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-deeva.jpg" alt="Catalog Avatar" />
+                        </div>
+                        <span>Deeva_Sofia</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="catalog__card">
+              <a href="#" class="card">
+                <img src="img/catalog-9.jpg" class="card-img-top" alt="Catalog Image" />
+                <div class="card-icons">
+                  <img src="img/catalog-heart.svg" alt="Catalog Heart" />
+                </div>
+                <div class="card-body">
+                  <div class="card-title">
+                    <span class="card-brand">HACHE</span>
+                    <h5 class="card-name">Салатове пальто Hache &ensp; &ensp; &ensp; &ensp; &ensp;</h5>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-price">
+                      <span class="card-old-price">5 999 ₴</span>
+                      <span class="card-new-price">4 199 ₴ </span>
+                    </div>
+                    <div class="card-seller">
+                      <div class="card-place">
+                        <div>
+                          <img src="img/catalog-geo.svg" alt="Geo Position" />
+                        </div>
+                        <span class="card-city">Київ</span>
+                      </div>
+                      <div class="card-seller-name">
+                        <div>
+                          <img src="img/catalog-avatar-love.jpg" alt="Catalog Avatar" />
+                        </div>
+                        <span>LoveBrand</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="row catalog__pagination d-flex justify-content-center">
+            <div class="col-xxl-8 col-xl-8 col-lg-9 col-12 d-flex justify-content-center justify-content-lg-end">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link catalog-prev" href="#">Попередня</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">6</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">7</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">8</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link catalog-next" href="#">Наступна</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   </main>
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-3 d-flex justify-content-start">
+        <div class="col-sm-6 col-12 d-flex justify-content-start">
           <ul class="footer-list">
             <li class="footer-item">
               <a href="#" class="footer-link">Довідка для покупців</a>
@@ -886,7 +906,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-3 d-flex justify-content-end">
+        <div class="col-sm-6 col-12 d-flex justify-content-start justify-content-sm-end">
           <ul class="footer-list">
             <li class="footer-item">
               <a href="#" class="footer-link">Довідка для продавців</a>
@@ -911,7 +931,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-3 d-flex justify-content-end">
+        <div class="col-sm-6 col-12 d-flex mt-5 mt-lg-0 justify-content-start justify-content-lg-end">
           <ul class="footer-list">
             <li class="footer-item">
               <a href="#" class="footer-link">Про нас</a>
@@ -930,7 +950,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-3 d-flex justify-content-center">
+        <div class="col-sm-6 col-12 d-flex mt-5 mt-lg-0 justify-content-start justify-content-sm-center">
           <ul class="footer-list">
             <li class="footer-item">
               <a href="#" class="footer-link">Мобільний додаток</a>
@@ -942,7 +962,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-2">
+        <div class="col-12">
           <p class="footer-copyright">© 2022 Monvalise</p>
         </div>
       </div>
