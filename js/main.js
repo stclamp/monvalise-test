@@ -1,8 +1,10 @@
 const languageBtn = document.querySelector(".header__dropdown");
-const languageList = document.querySelectorAll(".header__language .dropdown-item");
-const sortBtn = document.querySelector('.btn-normal');
-const sortBtnArr = document.querySelector('.btn-reverse');
-const sortList = document.querySelectorAll('.catalog__sortby .dropdown-item')
+const languageList = document.querySelectorAll(
+  ".header__language .dropdown-item"
+);
+const sortBtn = document.querySelector(".btn-normal");
+const sortBtnArr = document.querySelector(".btn-reverse");
+const sortList = document.querySelectorAll(".catalog__sortby .dropdown-item");
 
 languageList.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -10,12 +12,11 @@ languageList.forEach((item) => {
   });
 });
 
-sortList.forEach(item => {
-  item.addEventListener('click', (e) => {
+sortList.forEach((item) => {
+  item.addEventListener("click", (e) => {
     sortBtn.textContent = e.target.textContent;
-  })
-
-})
+  });
+});
 
 let slider = document.getElementById("slider");
 
@@ -28,27 +29,16 @@ noUiSlider.create(slider, {
   },
 });
 
-const filterOpen = document.querySelector('.catalog__filter-btn');
-const filterClose = document.querySelector('.catalog__filter-close');
-const filterContent = document.querySelector('.catalog__filters');
-const filterOverflow = document.querySelector('.catalog__overflow');
+const filterOpen = document.querySelector(".catalog__filter-btn");
+const filterContent = document.querySelector(".catalog__filters");
+const filterOverflow = document.querySelector(".catalog__overflow");
 
-filterOpen.addEventListener('click', () => {
-  filterContent.classList.add('active');
-  filterOverflow.classList.add('active');
-  filterClose.classList.add('active');
-})
+filterOpen.addEventListener("click", () => {
+  filterContent.classList.add("active");
+  filterOverflow.classList.add("active");
+});
 
-filterClose.addEventListener('click', () => {
-  filterContent.classList.remove('active');
-  filterOverflow.classList.remove('active');
-  filterClose.classList.remove('active');
-})
-
-filterOverflow.addEventListener('click', () => {
-  filterContent.classList.remove('active');
-  filterOverflow.classList.remove('active');
-  filterClose.classList.remove('active');
-})
-
-
+filterOverflow.addEventListener("click", () => {
+  filterContent.classList.remove("active");
+  filterOverflow.classList.remove("active");
+});
