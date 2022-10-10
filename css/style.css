@@ -143,32 +143,6 @@ transform: translateY(-117%);
   z-index: 1;
 }
 
-/* .header__form input.active {
-background-image: url('../img/close.svg');
-background-repeat: no-repeat;
-background-position: 98%;
-cursor: pointer;
-} */
-
-.header__form-remove {
-  position: relative;
-}
-
-.header__form-remove.active:after {
-  content: "";
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-image: url('../img/close.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  z-index: 5;
-}
-
 
 .header__search-icon {
   position: absolute;
