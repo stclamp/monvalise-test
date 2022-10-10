@@ -121,6 +121,10 @@
     display: none;
   }
 
+  .header__menu-item {
+    margin-right: 0;
+  }
+
   .catalog__cards {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
@@ -160,6 +164,10 @@
   }
 
   .catalog__cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 270px);
+  }
+
+  .card-info {
+    width: 230px;
   }
 }

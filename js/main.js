@@ -23,7 +23,7 @@ sortList.forEach((item) => {
 let slider = document.getElementById("slider");
 
 noUiSlider.create(slider, {
-  start: [0, 50],
+  start: [0, 48],
   connect: true,
   range: {
     min: 0,
