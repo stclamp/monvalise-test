@@ -57,11 +57,9 @@ img {
 
 .btn-close {
   right: 10px;
-    top: 5px;
-    position: absolute;
+  top: 5px;
+  position: absolute;
 }
-
-
 
 .header {
   position: relative;
@@ -69,7 +67,8 @@ img {
 
 .header__burger-btn {
   position: absolute;
-  top: 17px;
+  top: 50%;
+  transform: translateY(-50%);
   right: -26px;
 }
 
@@ -314,7 +313,6 @@ img {
 }
 
 .catalog__filter-btn {
- 
   opacity: 0;
   visibility: hidden;
 }
@@ -327,8 +325,6 @@ img {
 .btn.active {
   border-color: transparent;
 }
-
-
 
 .catalog__overflow {
   width: 100%;
@@ -431,7 +427,6 @@ img {
 }
 
 .catalog__subtitle h4 {
-  
   margin-bottom: 0;
   font-weight: 400;
   font-size: 22px;
@@ -563,7 +558,6 @@ img {
   outline: none;
 }
 
-
 .form-control:focus {
   outline: none;
   border-color: #c4c7c7;
@@ -611,8 +605,6 @@ img {
   color: #444748;
   padding-left: 8px;
 }
-
-
 
 .catalog__cards {
   margin-top: 24px;
