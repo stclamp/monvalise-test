@@ -44,3 +44,22 @@ filterOverflow.addEventListener("click", () => {
   filterContent.classList.remove("active");
   filterOverflow.classList.remove("active");
 });
+
+const searchInput = document.querySelectorAll('.header__form input')
+const searchLabel = document.querySelectorAll('.header__form-remove')
+let removeInputValue;
+
+searchInput.forEach(item => {
+  item.addEventListener('input', () => {
+    if (item.value.length > 0) {
+      searchLabel.forEach(label => {
+        label.classList.add('active');
+      })
+    } else {
+      searchLabel.forEach(label => {
+        label.classList.remove('active');
+      })
+    }
+  })
+})
+

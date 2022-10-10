@@ -1,4 +1,8 @@
 @media screen and (max-width: 575px) {
+
+    .header__menu-item {
+        margin-right: 0;
+      }
   .catalog__cards {
     grid-template-columns: repeat(1, 290px);
     justify-items: center;
@@ -85,6 +89,10 @@
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .header__top::after {
     display: none;
+  }
+
+  .header__menu-item {
+    margin-right: 0;
   }
 
   .catalog__cards {

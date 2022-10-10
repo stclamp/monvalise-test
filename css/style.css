@@ -139,14 +139,43 @@ transform: translateY(-117%);
   padding-left: 51px;
   padding-top: 8px;
   padding-bottom: 8px;
-
+  position: relative;
+  z-index: 1;
 }
+
+/* .header__form input.active {
+background-image: url('../img/close.svg');
+background-repeat: no-repeat;
+background-position: 98%;
+cursor: pointer;
+} */
+
+.header__form-remove {
+  position: relative;
+}
+
+.header__form-remove.active:after {
+  content: "";
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('../img/close.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  z-index: 5;
+}
+
 
 .header__search-icon {
   position: absolute;
   left: 16px;
   top: 50%;
   transform: translateY(-58%);
+  z-index: 2;
 }
 
 .header__form input::placeholder {
