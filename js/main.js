@@ -1,4 +1,4 @@
-const languageBtn = document.querySelector(".header__dropdown");
+const languageBtn = document.querySelectorAll(".header__dropdown");
 const languageList = document.querySelectorAll(
   ".header__language .dropdown-item"
 );
@@ -8,7 +8,9 @@ const sortList = document.querySelectorAll(".catalog__sortby .dropdown-item");
 
 languageList.forEach((item) => {
   item.addEventListener("click", (e) => {
-    languageBtn.textContent = e.target.textContent;
+    languageBtn.forEach((btn) => {
+      btn.textContent = e.target.textContent;
+    });
   });
 });
 
